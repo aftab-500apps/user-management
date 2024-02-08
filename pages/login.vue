@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div class="w-96 m-auto">
     <Form
       :formData="loginFormFields"
       editingEmployeeOrContact="null"
       @formSubmitted="handleLoginForm"
     />
     <p class="flex justify-center items-center gap-2">
-      Not a member? <NuxtLink to="/signup">create account</NuxtLink>
+      Not a member?
+      <NuxtLink to="/signup" class="text-emerald-700">Create account</NuxtLink>
     </p>
   </div>
 </template>
