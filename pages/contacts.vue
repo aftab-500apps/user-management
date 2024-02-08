@@ -1,4 +1,8 @@
 <script setup>
+definePageMeta({
+  middleware: "auth",
+});
+
 import Modal from "@/components/Modal.vue";
 import { ref, computed, onMounted } from "vue";
 import { useContactStore } from "@/store/contact";

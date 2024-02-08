@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-defineProps(["isOpen", "openModal", "closeModal"]);
+const { isOpen, closeModal } = defineProps(["isOpen", "closeModal"]);
 </script>
 
 <style>

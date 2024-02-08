@@ -1,10 +1,15 @@
 <script setup>
+definePageMeta({
+  middleware: "auth",
+});
+
 import Modal from "@/components/Modal.vue";
 import { ref, computed, onMounted } from "vue";
 import { useEmployeeStore } from "@/store/employee";
 // import { employeeFormFields } from "~/data/formData.json";
 
 const store = useEmployeeStore();
+const isDeleteModal = ref(false);
 
 onMounted(() => {
   store.fetchEmployees();
@@ -33,7 +38,6 @@ const editEmployeeFn = (employee) => {
 };
 
 const deleteEmployee = (index) => {
-  // openModal()
   store.deleteEmployee(index);
 };
 
@@ -142,7 +146,9 @@ const closeModal = () => {
                 <td class="px-6 py-4 whitespace-nowrap">
                   {{ employee.designation }}
                 </td>
-                <td class="px-6 flex gap-2 py-4 whitespace-nowrap justify-center">
+                <td
+                  class="px-6 flex gap-2 py-4 whitespace-nowrap justify-center"
+                >
                   <CommonButton
                     @click="editEmployeeFn(employee)"
                     class="bg-emerald-700 hover:bg-emerald-800 focus:ring-blue-500"
@@ -155,9 +161,6 @@ const closeModal = () => {
                   >
                     Delete
                   </CommonButton>
-                  <!-- <Modal>
-
-                  </Modal> -->
                 </td>
               </tr>
             </tbody>

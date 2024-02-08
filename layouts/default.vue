@@ -9,6 +9,28 @@
             {{ title }}
           </li>
         </NuxtLink>
+        <NuxtLink v-if="!isLoggedIn" to="/signup">
+          <li
+            class="hover:font-medium text-slate-800 hover:text-emerald-700 w-32 flex justify-center items-center transition-all duration-300 ease-in-out"
+          >
+            Sign up
+          </li>
+        </NuxtLink>
+        <NuxtLink v-if="!isLoggedIn" to="/login">
+          <li
+            class="hover:font-medium text-slate-800 hover:text-emerald-700 w-32 flex justify-center items-center transition-all duration-300 ease-in-out"
+          >
+            Login
+          </li>
+        </NuxtLink>
+
+        <li
+          v-if="isLoggedIn"
+          @click="handleLogout"
+          class="hover:font-medium cursor-pointer text-slate-800 hover:text-emerald-700 w-32 flex justify-center items-center transition-all duration-300 ease-in-out"
+        >
+          Logout
+        </li>
       </ul>
     </nav>
   </header>
@@ -18,7 +40,17 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { useAuthStore } from "~/store/auth";
+const store = useAuthStore();
+
+const isLoggedIn = computed(() => store.isLoggedIn);
+
+const handleLogout = () => {
+  store.logoutUser();
+  navigateTo("/login");
+};
+
 const navLinks = [
   {
     title: "Home",
@@ -31,14 +63,6 @@ const navLinks = [
   {
     title: "Contacts",
     to: "/contacts",
-  },
-  {
-    title: "Signup",
-    to: "/signup",
-  },
-  {
-    title: "Login",
-    to: "/login",
   },
 ];
 </script>
