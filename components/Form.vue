@@ -1,6 +1,8 @@
 <template>
   <form @submit.prevent="handleSubmit" class="p-4">
-    <h2 class="text-lg font-semibold mb-4">{{ formData.formName }}</h2>
+    <h2 class="text-lg font-semibold mb-4 text-center text-slate-700 uppercase">
+      {{ formData.formName }}
+    </h2>
     <div
       v-for="(field, index) in formData.inputFields"
       :key="index"
@@ -26,7 +28,7 @@
     </div>
     <button
       type="submit"
-      class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
+      class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-2 px-4 rounded-md"
     >
       {{ formData.formName }}
     </button>
@@ -44,7 +46,7 @@ const formValues = ref({});
 
 onMounted(() => {
   // Populate formValues with editingEmployee data if editing
-  if (editingEmployeeOrContact) {
+  if (editingEmployeeOrContact !== null) {
     for (const field of formData.inputFields) {
       formValues.value[field.name] = editingEmployeeOrContact[field.name];
     }

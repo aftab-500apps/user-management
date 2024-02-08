@@ -1,7 +1,4 @@
 import { defineStore } from "pinia";
-const { generateRandomID } = useNuxtApp();
-const randomID = generateRandomID();
-console.log(randomID);
 
 export const useContactStore = defineStore("contacts", {
   state: () => ({
@@ -29,7 +26,6 @@ export const useContactStore = defineStore("contacts", {
     },
     editingContact: null,
     contactsArr: [],
-    // searchQuery: "",
     isOpen: false,
   }),
 
@@ -62,10 +58,6 @@ export const useContactStore = defineStore("contacts", {
       localStorage.setItem("contactsDB", JSON.stringify(this.contactsArr));
     },
 
-    // setSearchQuery(query) {
-    //   this.searchQuery = query;
-    // },
-
     setOpenModal(value) {
       this.isOpen = value;
     },
@@ -84,14 +76,4 @@ export const useContactStore = defineStore("contacts", {
       this.editingContact = contact;
     },
   },
-
-  // getters: {
-  //   filteredContacts() {
-  //     return this.contactsArr.filter(
-  //       (contact) =>
-  //         contact.name &&
-  //         contact.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-  //     );
-  //   },
-  // },
 });

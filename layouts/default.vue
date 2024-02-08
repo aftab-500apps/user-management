@@ -4,7 +4,7 @@
       <ul class="flex justify-around">
         <NuxtLink v-for="{ title, to } in navLinks" :to="to" :key="title">
           <li
-            class="hover:font-medium hover:text-green-600 w-32 flex justify-center items-center transition-all duration-300 ease-in-out"
+            class="hover:font-medium text-slate-800 hover:text-emerald-700 w-32 flex justify-center items-center transition-all duration-300 ease-in-out"
           >
             {{ title }}
           </li>
@@ -33,8 +33,12 @@ const navLinks = [
     to: "/contacts",
   },
   {
-    title: "Users",
-    to: "/users",
+    title: "Signup",
+    to: "/signup",
+  },
+  {
+    title: "Login",
+    to: "/login",
   },
 ];
 </script>

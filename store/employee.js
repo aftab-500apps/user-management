@@ -37,7 +37,6 @@ export const useEmployeeStore = defineStore("employee", {
     },
     editingEmployee: null,
     employeesArr: [],
-    // searchQuery: "",
     isOpen: false,
   }),
 
@@ -70,10 +69,6 @@ export const useEmployeeStore = defineStore("employee", {
       localStorage.setItem("employeesDB", JSON.stringify(this.employeesArr));
     },
 
-    // setSearchQuery(query) {
-    //   this.searchQuery = query;
-    // },
-
     setOpenModal(value) {
       this.isOpen = value;
     },
@@ -92,14 +87,4 @@ export const useEmployeeStore = defineStore("employee", {
       this.editingEmployee = employee;
     },
   },
-
-  // getters: {
-  //   filteredEmployees() {
-  //     return this.employeesArr.filter(
-  //       (employee) =>
-  //         employee.name &&
-  //         employee.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-  //     );
-  //   },
-  // },
 });

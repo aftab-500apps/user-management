@@ -4,7 +4,7 @@
       <slot></slot>
       <button
         @click="closeModal"
-        class="w-1/2 m-auto flex justify-center bg-red-500 text-white px-4 py-2 rounded-md"
+        class="w-1/2 m-auto flex justify-center bg-red-700 hover:bg-red-800 text-white px-4 py-2 rounded-md"
       >
         Close
       </button>
@@ -33,5 +33,6 @@ defineProps(["isOpen", "openModal", "closeModal"]);
   background-color: white;
   padding: 20px;
   border-radius: 5px;
+  width: 50%;
 }
 </style>

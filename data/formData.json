@@ -1,0 +1,95 @@
+{
+  "contactFormFields": {
+    "formType": "contact",
+    "formName": "Add Contact",
+    "inputFields": [
+      {
+        "name": "name",
+        "type": "text",
+        "labelName": "Name"
+      },
+      {
+        "name": "phone",
+        "type": "number",
+        "labelName": "Phone"
+      },
+      {
+        "name": "country",
+        "type": "select",
+        "labelName": "Country",
+        "items": ["India", "Russia", "UAE", "UK", "Japan"]
+      }
+    ]
+  },
+  "employeeFormFields": {
+    "formType": "employee",
+    "formName": "Add Employee",
+    "inputFields": [
+      {
+        "name": "name",
+        "type": "text",
+        "labelName": "Name"
+      },
+      {
+        "name": "age",
+        "type": "number",
+        "labelName": "Age"
+      },
+      {
+        "name": "gender",
+        "type": "select",
+        "items": ["male", "female"],
+        "labelName": "Gender"
+      },
+      {
+        "name": "date",
+        "type": "date",
+        "labelName": "Date of joining"
+      },
+      {
+        "name": "designation",
+        "type": "select",
+        "items": ["developer", "designer", "manager", "team lead"],
+        "labelName": "Select Designation"
+      }
+    ]
+  },
+
+  "loginFormFields": {
+    "formType": "login",
+    "formName": "Login",
+    "inputFields": [
+      {
+        "name": "email",
+        "type": "email",
+        "labelName": "Email"
+      },
+      {
+        "name": "password",
+        "type": "password",
+        "labelName": "Password"
+      }
+    ]
+  },
+  "signupFormFields": {
+    "formType": "signup",
+    "formName": "Sign up",
+    "inputFields": [
+      {
+        "name": "name",
+        "type": "text",
+        "labelName": "Name"
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "labelName": "Email"
+      },
+      {
+        "name": "password",
+        "type": "password",
+        "labelName": "Password"
+      }
+    ]
+  }
+}

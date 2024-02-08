@@ -17,6 +17,7 @@ const handleFormSubmit = (formData) => {
     const updatedContact = { ...formData, id: store.editingContact.id };
     store.updateContact(index, updatedContact);
     store.editContact(null);
+    store.setFormName("Add Contact");
   } else {
     store.addContact(formData);
   }
@@ -59,10 +60,10 @@ const closeModal = () => {
         type="text"
         v-model="searchQuery"
         placeholder="Search Employee"
-        class="border-2 px-4 py-2 rounded border-blue-300"
+        class="border-2 px-4 py-2 rounded border-emerald-700 outline-none"
       />
       <CommonButton
-        class="bg-blue-500 hover:bg-blue-600 focus:ring-blue-500"
+        class="bg-emerald-700 hover:bg-emerald-800 focus:ring-blue-500"
         @click="openModal"
       >
         Add Contact
@@ -89,19 +90,21 @@ const closeModal = () => {
         :key="contact.id"
         class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2"
       >
-        <div class="bg-white rounded shadow-md shadow-green-600 p-4">
-          <p><strong>Name:</strong> {{ contact.name }}</p>
-          <p><strong>Phone:</strong> {{ contact.phone }}</p>
-          <p><strong>Country:</strong> {{ contact.country }}</p>
+        <div
+          class="bg-white rounded shadow-sm shadow-emerald-700 p-4 text-sm text-slate-800"
+        >
+          <p><strong>Name: </strong> {{ contact.name }}</p>
+          <p><strong>Phone: </strong> {{ contact.phone }}</p>
+          <p><strong>Country: </strong> {{ contact.country }}</p>
           <div class="mt-2">
             <CommonButton
-              class="bg-blue-500 hover:bg-blue-600 focus:ring-blue-500 mr-2"
+              class="bg-emerald-700 hover:bg-emerald-800 focus:ring-blue-500 mr-2"
               @click="editContact(contact)"
             >
               Edit
             </CommonButton>
             <CommonButton
-              class="bg-red-500 hover:bg-red-600 focus:ring-red-500"
+              class="bg-red-700 hover:bg-red-800 focus:ring-red-500"
               @click="deleteContact(index)"
             >
               Delete
