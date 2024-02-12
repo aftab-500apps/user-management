@@ -44,8 +44,9 @@
 import { useAuthStore } from "~/store/auth";
 const store = useAuthStore();
 
+// using computed for tracking changes
 const isLoggedIn = computed(() => store.isLoggedIn);
-
+// Handle logout
 const handleLogout = () => {
   store.logoutUser();
   navigateTo("/login");
