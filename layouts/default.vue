@@ -65,5 +65,9 @@ const navLinks = [
     title: "Contacts",
     to: "/contacts",
   },
+  {
+    title: "Users",
+    to: "/users",
+  },
 ];
 </script>
